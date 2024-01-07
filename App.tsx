@@ -1,4 +1,4 @@
-import { StatusBar, Text, View } from 'react-native'
+import { StatusBar } from 'react-native'
 import { NativeBaseProvider } from 'native-base'
 import {
   useFonts,
@@ -9,6 +9,7 @@ import {
 import { theme } from './src/theme'
 
 import { Loading } from '@components/Loading'
+import { SignIn } from '@screens/SignIn'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,19 +25,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? (
-        <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Text>As fontes foram carregadas</Text>
-        </View>
-      ) : (
-        <Loading />
-      )}
+      {fontsLoaded ? <SignIn /> : <Loading />}
     </NativeBaseProvider>
   )
 }
