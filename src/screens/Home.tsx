@@ -46,10 +46,11 @@ export function Home() {
           px: 8,
         }}
         my={10}
+        minH={10}
         maxH={10}
       />
 
-      <VStack flex={1} px={8}>
+      <VStack px={8}>
         <HStack justifyContent="space-between" mb={5}>
           <Heading color="gray.200" fontSize="md">
             Exercícios
